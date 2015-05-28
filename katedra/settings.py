@@ -37,6 +37,12 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # third party apps
+    'markdown_deux',
+
+    # my apps
+    'cms',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -71,17 +77,6 @@ TEMPLATES = [
 WSGI_APPLICATION = 'katedra.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/1.8/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
@@ -100,3 +95,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+# Templates
+SETTINGS_DIR = os.path.dirname(__file__)
+PROJECT_PATH = os.path.join(SETTINGS_DIR, os.pardir)
+PROJECT_ROOT = os.path.abspath(PROJECT_PATH)
+TEMPLATE_DIRS = (
+    os.path.join(PROJECT_ROOT, 'cms/templates'),
+)
