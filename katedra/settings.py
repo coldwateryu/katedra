@@ -104,3 +104,5 @@ PROJECT_ROOT = os.path.abspath(PROJECT_PATH)
 TEMPLATE_DIRS = (
     os.path.join(PROJECT_ROOT, 'cms/templates'),
 )
+
+# hotfix test
